@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{b49988d7-1836-4ca5-83c3-03526b57c911}</ProjectGuid>
+    <RootNamespace>mathsubset</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>math_subset.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\musl\src\internal</AdditionalIncludeDirectories>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>math_subset.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>math_subset.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\musl\src\internal</AdditionalIncludeDirectories>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>math_subset.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="math_subset.c" />
+    <ClCompile Include="musl\src\math\acos.c" />
+    <ClCompile Include="musl\src\math\acosf.c" />
+    <ClCompile Include="musl\src\math\acosh.c" />
+    <ClCompile Include="musl\src\math\acoshf.c" />
+    <ClCompile Include="musl\src\math\asin.c" />
+    <ClCompile Include="musl\src\math\asinf.c" />
+    <ClCompile Include="musl\src\math\asinh.c" />
+    <ClCompile Include="musl\src\math\asinhf.c" />
+    <ClCompile Include="musl\src\math\atan.c" />
+    <ClCompile Include="musl\src\math\atan2.c" />
+    <ClCompile Include="musl\src\math\atan2f.c" />
+    <ClCompile Include="musl\src\math\atanf.c" />
+    <ClCompile Include="musl\src\math\atanh.c" />
+    <ClCompile Include="musl\src\math\atanhf.c" />
+    <ClCompile Include="musl\src\math\cbrt.c" />
+    <ClCompile Include="musl\src\math\cbrtf.c" />
+    <ClCompile Include="musl\src\math\ceil.c" />
+    <ClCompile Include="musl\src\math\ceilf.c" />
+    <ClCompile Include="musl\src\math\copysign.c" />
+    <ClCompile Include="musl\src\math\copysignf.c" />
+    <ClCompile Include="musl\src\math\cos.c" />
+    <ClCompile Include="musl\src\math\cosf.c" />
+    <ClCompile Include="musl\src\math\cosh.c" />
+    <ClCompile Include="musl\src\math\coshf.c" />
+    <ClCompile Include="musl\src\math\erf.c" />
+    <ClCompile Include="musl\src\math\erff.c" />
+    <ClCompile Include="musl\src\math\exp.c" />
+    <ClCompile Include="musl\src\math\exp2.c" />
+    <ClCompile Include="musl\src\math\exp2f.c" />
+    <ClCompile Include="musl\src\math\exp2f_data.c" />
+    <ClCompile Include="musl\src\math\expf.c" />
+    <ClCompile Include="musl\src\math\expm1.c" />
+    <ClCompile Include="musl\src\math\expm1f.c" />
+    <ClCompile Include="musl\src\math\exp_data.c" />
+    <ClCompile Include="musl\src\math\fabs.c" />
+    <ClCompile Include="musl\src\math\fdim.c" />
+    <ClCompile Include="musl\src\math\fdimf.c" />
+    <ClCompile Include="musl\src\math\floor.c" />
+    <ClCompile Include="musl\src\math\floorf.c" />
+    <ClCompile Include="musl\src\math\fma.c" />
+    <ClCompile Include="musl\src\math\fmaf.c" />
+    <ClCompile Include="musl\src\math\fmax.c" />
+    <ClCompile Include="musl\src\math\fmaxf.c" />
+    <ClCompile Include="musl\src\math\fmin.c" />
+    <ClCompile Include="musl\src\math\fminf.c" />
+    <ClCompile Include="musl\src\math\fmod.c" />
+    <ClCompile Include="musl\src\math\fmodf.c" />
+    <ClCompile Include="musl\src\math\frexp.c" />
+    <ClCompile Include="musl\src\math\hypot.c" />
+    <ClCompile Include="musl\src\math\hypotf.c" />
+    <ClCompile Include="musl\src\math\ilogb.c" />
+    <ClCompile Include="musl\src\math\ilogbf.c" />
+    <ClCompile Include="musl\src\math\j0.c" />
+    <ClCompile Include="musl\src\math\j1.c" />
+    <ClCompile Include="musl\src\math\jn.c" />
+    <ClCompile Include="musl\src\math\ldexp.c" />
+    <ClCompile Include="musl\src\math\ldexpf.c" />
+    <ClCompile Include="musl\src\math\lgamma.c" />
+    <ClCompile Include="musl\src\math\lgammaf.c" />
+    <ClCompile Include="musl\src\math\lgammaf_r.c" />
+    <ClCompile Include="musl\src\math\lgamma_r.c" />
+    <ClCompile Include="musl\src\math\log.c" />
+    <ClCompile Include="musl\src\math\log10.c" />
+    <ClCompile Include="musl\src\math\log10f.c" />
+    <ClCompile Include="musl\src\math\log1p.c" />
+    <ClCompile Include="musl\src\math\log1pf.c" />
+    <ClCompile Include="musl\src\math\log2.c" />
+    <ClCompile Include="musl\src\math\log2f.c" />
+    <ClCompile Include="musl\src\math\log2f_data.c" />
+    <ClCompile Include="musl\src\math\log2_data.c" />
+    <ClCompile Include="musl\src\math\logb.c" />
+    <ClCompile Include="musl\src\math\logbf.c" />
+    <ClCompile Include="musl\src\math\logf.c" />
+    <ClCompile Include="musl\src\math\logf_data.c" />
+    <ClCompile Include="musl\src\math\log_data.c" />
+    <ClCompile Include="musl\src\math\modf.c" />
+    <ClCompile Include="musl\src\math\modff.c" />
+    <ClCompile Include="musl\src\math\nan.c" />
+    <ClCompile Include="musl\src\math\nanf.c" />
+    <ClCompile Include="musl\src\math\nextafter.c" />
+    <ClCompile Include="musl\src\math\nextafterf.c" />
+    <ClCompile Include="musl\src\math\nexttoward.c" />
+    <ClCompile Include="musl\src\math\nexttowardf.c" />
+    <ClCompile Include="musl\src\math\pow.c" />
+    <ClCompile Include="musl\src\math\powf.c" />
+    <ClCompile Include="musl\src\math\powf_data.c" />
+    <ClCompile Include="musl\src\math\pow_data.c" />
+    <ClCompile Include="musl\src\math\remainder.c" />
+    <ClCompile Include="musl\src\math\remainderf.c" />
+    <ClCompile Include="musl\src\math\remquo.c" />
+    <ClCompile Include="musl\src\math\remquof.c" />
+    <ClCompile Include="musl\src\math\rint.c" />
+    <ClCompile Include="musl\src\math\rintf.c" />
+    <ClCompile Include="musl\src\math\round.c" />
+    <ClCompile Include="musl\src\math\roundf.c" />
+    <ClCompile Include="musl\src\math\scalbn.c" />
+    <ClCompile Include="musl\src\math\scalbnf.c" />
+    <ClCompile Include="musl\src\math\signgam.c" />
+    <ClCompile Include="musl\src\math\sin.c" />
+    <ClCompile Include="musl\src\math\sincos.c" />
+    <ClCompile Include="musl\src\math\sincosf.c" />
+    <ClCompile Include="musl\src\math\sinf.c" />
+    <ClCompile Include="musl\src\math\sinh.c" />
+    <ClCompile Include="musl\src\math\sinhf.c" />
+    <ClCompile Include="musl\src\math\sqrt.c" />
+    <ClCompile Include="musl\src\math\sqrtf.c" />
+    <ClCompile Include="musl\src\math\sqrt_data.c" />
+    <ClCompile Include="musl\src\math\tan.c" />
+    <ClCompile Include="musl\src\math\tanf.c" />
+    <ClCompile Include="musl\src\math\tanh.c" />
+    <ClCompile Include="musl\src\math\tanhf.c" />
+    <ClCompile Include="musl\src\math\tgamma.c" />
+    <ClCompile Include="musl\src\math\tgammaf.c" />
+    <ClCompile Include="musl\src\math\trunc.c" />
+    <ClCompile Include="musl\src\math\truncf.c" />
+    <ClCompile Include="musl\src\math\__cos.c" />
+    <ClCompile Include="musl\src\math\__cosdf.c" />
+    <ClCompile Include="musl\src\math\__expo2.c" />
+    <ClCompile Include="musl\src\math\__expo2f.c" />
+    <ClCompile Include="musl\src\math\__fpclassify.c" />
+    <ClCompile Include="musl\src\math\__fpclassifyf.c" />
+    <ClCompile Include="musl\src\math\__math_divzero.c" />
+    <ClCompile Include="musl\src\math\__math_divzerof.c" />
+    <ClCompile Include="musl\src\math\__math_invalid.c" />
+    <ClCompile Include="musl\src\math\__math_invalidf.c" />
+    <ClCompile Include="musl\src\math\__rem_pio2.c" />
+    <ClCompile Include="musl\src\math\__rem_pio2f.c" />
+    <ClCompile Include="musl\src\math\__rem_pio2_large.c" />
+    <ClCompile Include="musl\src\math\__sin.c" />
+    <ClCompile Include="musl\src\math\__sindf.c" />
+    <ClCompile Include="musl\src\math\__tan.c" />
+    <ClCompile Include="musl\src\math\__tandf.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="musl\src\internal\libm.h" />
+    <ClInclude Include="musl\src\math\exp2f_data.h" />
+    <ClInclude Include="musl\src\math\exp_data.h" />
+    <ClInclude Include="musl\src\math\log2f_data.h" />
+    <ClInclude Include="musl\src\math\log2_data.h" />
+    <ClInclude Include="musl\src\math\logf_data.h" />
+    <ClInclude Include="musl\src\math\log_data.h" />
+    <ClInclude Include="musl\src\math\powf_data.h" />
+    <ClInclude Include="musl\src\math\pow_data.h" />
+    <ClInclude Include="musl\src\math\sqrt_data.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="math_subset.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
